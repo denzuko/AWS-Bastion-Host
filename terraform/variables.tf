@@ -1,7 +1,6 @@
 
 variable "cmdb" {
-    type    = "map"
-    
+    type    = map
     default = {
         application    = "datagrid"
         role           = "cloud compute"
