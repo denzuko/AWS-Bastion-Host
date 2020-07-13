@@ -11,13 +11,11 @@ resource "aws_key_pair" "mykeypair" {
 resource "aws_placement_group" "production" {
   name      = "production"
   strategy  = "cluster"
-  tags      = var.default-tags
 }
 
 resource "aws_placement_group" "preproduction" {
   name      = "preproduction"
   strategy  = "cluster"
-  tags      = var.default-tags
 }
 
 ## Template
