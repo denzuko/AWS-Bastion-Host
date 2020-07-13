@@ -3,7 +3,7 @@
 resource "aws_key_pair" "mykeypair" {
   key_name   = "mykeypair"
   public_key = file(var.key_path)
-  tags = var.default_tags
+  tags = var.default-tags
 }
 
 ## Environment
@@ -11,13 +11,13 @@ resource "aws_key_pair" "mykeypair" {
 resource "aws_placement_group" "production" {
   name      = "production"
   strategy  = "cluster"
-  tags      = var.default_tags
+  tags      = var.default-tags
 }
 
 resource "aws_placement_group" "preproduction" {
   name      = "preproduction"
   strategy  = "cluster"
-  tags      = var.default_tags
+  tags      = var.default-tags
 }
 
 ## Template
@@ -25,7 +25,7 @@ resource "aws_placement_group" "preproduction" {
 resource "aws_launch_template" "bastion" {
   name_prefix   = "xmcore.bastion-"
   image_id      = var.image_id[var.default-tags.region]
-  tags          = var.default_tags
+  tags          = var.default-tags
 
   instance_type = var.sizes["bastion-instance"]
   
@@ -48,7 +48,7 @@ resource "aws_launch_template" "bastion" {
 resource "aws_launch_template" "compute" {
   name_prefix   = "xmcore.compute-"
   image_id      = var.image_id[var.default-tags.region]
-  tags          = var.default_tags
+  tags          = var.default-tags
   instance_type = var.sizes["private-instance"]
   
   instance_initiated_shutdown_behavior = "terminate"
@@ -79,7 +79,7 @@ resource "aws_autoscaling_group" "bastion" {
   desired_capacity     = 1
   min_size             = 1
   max_size             = 1
-  tags                 = var.default_tags
+  tags                 = var.default-tags
   placement_group      = aws_placement_group.production.id
 }
 
