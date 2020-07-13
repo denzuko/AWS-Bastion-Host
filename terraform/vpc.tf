@@ -36,5 +36,4 @@ resource "aws_route_table" "public-rt" {
 resource "aws_route_table_association" "public-rta" {
   subnet_id      = aws_subnet.public-subnet.id
   route_table_id = aws_route_table.public-rt.id
-  tags           = var.default-tags
 }
