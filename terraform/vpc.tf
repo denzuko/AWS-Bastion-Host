@@ -7,7 +7,7 @@ resource "aws_subnet" "public-subnet" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.cidr.public
   map_public_ip_on_launch = "true"
-  availability_zone       = var.region
+  availability_zone       = var.default-tags.region
   tags                    = var.default_tags
 }
 
@@ -15,8 +15,8 @@ resource "aws_subnet" "private-subnet" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.cidr.private
   map_public_ip_on_launch = "false"
-  availability_zone       = var.region
-  tags = var.default_tags
+  availability_zone       = var.default-tags.region
+  tags                    = var.default_tags
 }
 
 resource "aws_internet_gateway" "internet-gw" {
