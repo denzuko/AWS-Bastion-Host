@@ -10,7 +10,6 @@ env:
   TF_IN_AUTOMATION: true
     
 defaults:
-
   run:
     working-directory: terraform
 
