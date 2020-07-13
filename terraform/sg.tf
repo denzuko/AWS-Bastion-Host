@@ -31,7 +31,7 @@ resource "aws_security_group_rule" "egress_any" {
   from_port         = 0
   to_port           = 0
   protocol          = "-1"
-  cidr_blocks       = ["${var.cidr.anycast}"]
+  cidr_blocks       = [var.cidr.anycast]
   security_group_id = aws_security_group.allow-ssh.id
   tags              = var.default_tags
 }
