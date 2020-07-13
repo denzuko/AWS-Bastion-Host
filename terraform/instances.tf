@@ -3,6 +3,7 @@
 resource "aws_key_pair" "mykeypair" {
   key_name   = "mykeypair"
   public_key = file(var.key_path)
+  tags = var.default_tags
 }
 
 ## Environment
@@ -25,7 +26,9 @@ resource "aws_launch_template" "bastion" {
   name_prefix   = "xmcore.bastion-"
   image_id      = var.image_id[var.region]
   tags          = var.default_tags
+
   instance_type = var.sizes["bastion-instance"]
+  
   instance_initiated_shutdown_behavior = "terminate"
   disable_api_termination = true
 
@@ -47,6 +50,7 @@ resource "aws_launch_template" "compute" {
   image_id      = var.image_id[var.region]
   tags          = var.default_tags
   instance_type = var.sizes["private-instance"]
+  
   instance_initiated_shutdown_behavior = "terminate"
   disable_api_termination = true
 
