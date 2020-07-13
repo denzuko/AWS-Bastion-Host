@@ -15,6 +15,9 @@ variable "default-tags" {
     }
 }
 
+variable public_key {
+    default="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCWYSVqzAgCHK35HPnaIfhS9zDQxGuSfr6SsB1+YaLeDgdIJ58YFrdhrIJEnNK8xvEdMOTXnIddmKjEQJBhd4J+aMS9JbfJ+9rJ9Nq4CXEwWogpOynPYes+YKcikjwqkYPtWU3cc3HeNieOT6VLyNyuxJBy8GLzXbeJ+Qm6hnvYSiYG+2LeRlVwgwkWR0YAORRWksSTYc8CJ94d1kLYJfKNFCFmMx+Qtui6kh3BwYzpc8CnASx1cWAr3j7z+Dgzzy0x7iAxlIiuooX5fSuU9LWRNqXaW/cMgtPCEMIMbRKie7Ptdjc3iUKpZkrxEbHWHgf7lBGm1YgmVHgiLVZQX/nj"
+
 variable profile {
     default="personal"
 }
