@@ -8,10 +8,6 @@ on:
 
 env:
   TF_IN_AUTOMATION: true
-    
-defaults:
-  run:
-    working-directory: terraform
 
 jobs:
   terraform:
@@ -22,6 +18,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: terraform
 
     # Checkout the repository to the GitHub Actions runner
     steps:
