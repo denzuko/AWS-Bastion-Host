@@ -24,7 +24,7 @@ resource "aws_placement_group" "preproduction" {
 
 resource "aws_launch_template" "bastion" {
   name_prefix   = "xmcore.bastion-"
-  image_id      = var.image_id[var.region]
+  image_id      = var.image_id[var.default-tags.region]
   tags          = var.default_tags
 
   instance_type = var.sizes["bastion-instance"]
@@ -47,7 +47,7 @@ resource "aws_launch_template" "bastion" {
 
 resource "aws_launch_template" "compute" {
   name_prefix   = "xmcore.compute-"
-  image_id      = var.image_id[var.region]
+  image_id      = var.image_id[var.default-tags.region]
   tags          = var.default_tags
   instance_type = var.sizes["private-instance"]
   
