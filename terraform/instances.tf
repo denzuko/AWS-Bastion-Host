@@ -40,8 +40,6 @@ resource "aws_launch_template" "bastion" {
   network_interfaces {
     subnet_id = aws_subnet.public-subnet.id
   }
-
-  tags  = var.default-tags  
 }
 
 resource "aws_launch_template" "compute" {
@@ -63,10 +61,7 @@ resource "aws_launch_template" "compute" {
   
   network_interfaces {
     subnet_id = aws_subnet.private-subnet.id
-  }
-  
-  tags  = var.default-tags
-  
+  }  
 }
 
 ## Instance(s)
