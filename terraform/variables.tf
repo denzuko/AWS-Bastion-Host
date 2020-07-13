@@ -1,5 +1,4 @@
-
-variable "cmdb" {
+variable "default-tags" {
     type    = map
     default = {
         application    = "datagrid"
@@ -33,7 +32,7 @@ variable key_path {
 }
 
 variable "images" {
-  type    = "map"
+  type    = map
   default = {
     "eu-west-1" = "ami-049f322a544cfcf88"
     "us-east-1" = "ami-04e7b4117bb0488e4"
@@ -42,7 +41,7 @@ variable "images" {
 }
 
 variable "sizes" {
-    type    = "map"
+    type    = map
     default = {
         "bastion-instance" = "t3.nano"
         "private-instance" = "t3.medium"
@@ -58,28 +57,11 @@ variable "min_size" {
 }
 
 variable "cidr" {
-    type    = "map"
+    type    = map
     default = {
         "network"   = "10.0.0.0/27"
         "private"   = "10.0.0.16/28"
         "public"    = "10.0.0.0/28"
         "anycast"   = "0.0.0.0/0"
     }
-}
-
-variable "default-tags" {
-    type    = "map"
-    default = {
-
-        net.matrix.application  = var.cmdb.application
-        net.matrix.costcenter   = var.cmdb.costcenter
-        net.matrix.customer     = var.cmdb.customer
-        net.matrix.duns         = var.cmdb.duns
-        net.matrix.environment  = var.cmdb.environment
-        net.matrix.oid          = var.cmdb.oid
-        net.matrix.organization = var.cmdb.organization
-        net.matrix.orgunit      = var.cmdb.orgunit
-        net.matrix.owner        = var.cmdb.owner
-        net.matrix.region       = var.cmdb.region
-        net.matrix.role         = var.cmdb.role
 }
