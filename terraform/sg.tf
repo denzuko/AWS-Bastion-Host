@@ -33,7 +33,6 @@ resource "aws_security_group_rule" "egress_any" {
   protocol          = "-1"
   cidr_blocks       = [var.cidr.anycast]
   security_group_id = aws_security_group.allow-ssh.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_zerotier" {
@@ -43,7 +42,6 @@ resource "aws_security_group_rule" "ingress_zerotier" {
   protocol          = "udp"
   cidr_blocks       = [var.cidr.anycast]
   security_group_id = aws_security_group.allow-zerotier.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_client_swarm" {
@@ -53,7 +51,6 @@ resource "aws_security_group_rule" "ingress_client_swarm" {
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.private]
   security_group_id = aws_security_group.allow-swarm.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_master_swarm" {
@@ -63,7 +60,6 @@ resource "aws_security_group_rule" "ingress_master_swarm" {
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.private]
   security_group_id = aws_security_group.allow-swarm.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_nds_tcp_swarm" {
@@ -73,7 +69,6 @@ resource "aws_security_group_rule" "ingress_nds_tcp_swarm" {
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.private]
   security_group_id = aws_security_group.allow-swarm.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_nds_udp_swarm" {
@@ -83,7 +78,6 @@ resource "aws_security_group_rule" "ingress_nds_udp_swarm" {
   protocol          = "udp"
   cidr_blocks       = [var.cidr.private]
   security_group_id = aws_security_group.allow-swarm.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_network_swarm" {
@@ -93,7 +87,6 @@ resource "aws_security_group_rule" "ingress_network_swarm" {
   protocol          = "udp"
   cidr_blocks       = [var.cidr.private]
   security_group_id = aws_security_group.allow-swarm.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_ssh" {
@@ -103,7 +96,6 @@ resource "aws_security_group_rule" "ingress_ssh" {
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.anycast]
   security_group_id = aws_security_group.allow-ssh.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_https" {
@@ -113,7 +105,6 @@ resource "aws_security_group_rule" "ingress_https" {
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.anycast]
   security_group_id = aws_security_group.allow-web.id
-  tags              = var.default-tags
 }
 
 resource "aws_security_group_rule" "ingress_http" {
@@ -123,5 +114,4 @@ resource "aws_security_group_rule" "ingress_http" {
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.anycast]
   security_group_id = aws_security_group.allow-web.id
-  tags              = var.default-tags
 }
