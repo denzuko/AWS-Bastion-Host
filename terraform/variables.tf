@@ -27,7 +27,7 @@ variable key_path {
     default = "keys/mykeypair.pub"
 }
 
-variable "images" {
+variable "image_id" {
   type    = map
   default = {
     "eu-west-1" = "ami-049f322a544cfcf88"
