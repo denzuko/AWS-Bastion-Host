@@ -8,7 +8,7 @@ resource "aws_subnet" "public-subnet" {
   cidr_block              = var.cidr.public
   map_public_ip_on_launch = "true"
   availability_zone       = var.default-tags.region
-  tags                    = var.default_tags
+  tags                    = var.default-tags
 }
 
 resource "aws_subnet" "private-subnet" {
