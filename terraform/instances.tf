@@ -92,7 +92,6 @@ resource "aws_autoscaling_group" "compute" {
   desired_capacity     = 1
   min_size             = var.min_size
   max_size             = var.max_size
-  tags                 = var.default-tags
   placement_group      = aws_placement_group.production.id
 
 }
