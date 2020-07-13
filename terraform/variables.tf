@@ -18,7 +18,7 @@ variable "cmdb" {
 }
 
 variable region {
-    default="${var.cmdb['region']}"
+    default=var.cmdb.region
 }
 
 variable profile {
@@ -72,15 +72,15 @@ variable "default-tags" {
     type    = "map"
     default = {
 
-        net.matrix.application  = "${var.cmdb['application']}"
-        net.matrix.costcenter   = "${var.cmdb['costcenter']}"
-        net.matrix.customer     = "${var.cmdb['customer']}"
-        net.matrix.duns         = "${var.cmdb['duns']}"
-        net.matrix.environment  = "${var.cmdb['environment']}"
-        net.matrix.oid          = "${var.cmdb['oid']}"
-        net.matrix.organization = "${var.cmdb['organization']}"
-        net.matrix.orgunit      = "${var.cmdb['orgunit']}"
-        net.matrix.owner        = "${var.cmdb['owner']}"
-        net.matrix.region       = "${var.cmdb['region']}"
-        net.matrix.role         = "${var.cmdb['role']}"
+        net.matrix.application  = var.cmdb.application
+        net.matrix.costcenter   = var.cmdb.costcenter
+        net.matrix.customer     = var.cmdb.customer
+        net.matrix.duns         = var.cmdb.duns
+        net.matrix.environment  = var.cmdb.environment
+        net.matrix.oid          = var.cmdb.oid
+        net.matrix.organization = var.cmdb.organization
+        net.matrix.orgunit      = var.cmdb.orgunit
+        net.matrix.owner        = var.cmdb.owner
+        net.matrix.region       = var.cmdb.region
+        net.matrix.role         = var.cmdb.role
 }
