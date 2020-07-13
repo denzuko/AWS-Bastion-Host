@@ -15,10 +15,6 @@ variable "default-tags" {
     }
 }
 
-variable region {
-    default=var.cmdb.region
-}
-
 variable profile {
     default="personal"
 }
