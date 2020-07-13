@@ -9,15 +9,15 @@ resource "aws_key_pair" "mykeypair" {
 ## Environment
 
 resource "aws_placement_group" "production" {
-  name     = "production"
-  strategy = "cluster"
-  tags = var.default_tags
+  name      = "production"
+  strategy  = "cluster"
+  tags      = var.default_tags
 }
 
 resource "aws_placement_group" "preproduction" {
-  name     = "preproduction"
-  strategy = "cluster"
-  tags = var.default_tags
+  name      = "preproduction"
+  strategy  = "cluster"
+  tags      = var.default_tags
 }
 
 ## Template
@@ -25,7 +25,8 @@ resource "aws_placement_group" "preproduction" {
 resource "aws_launch_template" "bastion" {
   name_prefix   = "xmcore.bastion-"
   image_id      = var.image_id[var.region]
-  tags = var.default_tags
+  tags          = var.default_tags
+
   instance_type = var.sizes["bastion-instance"]
   
   instance_initiated_shutdown_behavior = "terminate"
