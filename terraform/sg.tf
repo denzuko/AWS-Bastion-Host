@@ -52,7 +52,7 @@ resource "aws_security_group_rule" "ingress_client_swarm" {
   to_port           = 2376
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.private]
-  security_group_id = aws_security_group.alllow-swarm.id
+  security_group_id = aws_security_group.allow-swarm.id
   tags              = var.default_tags
 }
 
@@ -62,7 +62,7 @@ resource "aws_security_group_rule" "ingress_master_swarm" {
   to_port           = 2377
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.private]
-  security_group_id = aws_security_group.alllow-swarm.id
+  security_group_id = aws_security_group.allow-swarm.id
   tags              = var.default_tags
 }
 
@@ -72,7 +72,7 @@ resource "aws_security_group_rule" "ingress_nds_tcp_swarm" {
   to_port           = 7946
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.private]
-  security_group_id = aws_security_group.alllow-swarm.id
+  security_group_id = aws_security_group.allow-swarm.id
   tags              = var.default_tags
 }
 
@@ -82,7 +82,7 @@ resource "aws_security_group_rule" "ingress_nds_udp_swarm" {
   to_port           = 7946
   protocol          = "udp"
   cidr_blocks       = [var.cidr.private]
-  security_group_id = aws_security_group.alllow-swarm.id
+  security_group_id = aws_security_group.allow-swarm.id
   tags              = var.default_tags
 }
 
@@ -92,7 +92,7 @@ resource "aws_security_group_rule" "ingress_network_swarm" {
   to_port           = 4789
   protocol          = "udp"
   cidr_blocks       = [var.cidr.private]
-  security_group_id = aws_security_group.alllow-swarm.id
+  security_group_id = aws_security_group.allow-swarm.id
   tags              = var.default_tags
 }
 
@@ -102,7 +102,7 @@ resource "aws_security_group_rule" "ingress_ssh" {
   to_port           = 22
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.anycast]
-  security_group_id = aws_security_group.alllow-ssh.id
+  security_group_id = aws_security_group.allow-ssh.id
   tags              = var.default_tags
 }
 
@@ -112,7 +112,7 @@ resource "aws_security_group_rule" "ingress_https" {
   to_port           = 443
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.anycast]
-  security_group_id = aws_security_group.alllow-web.id
+  security_group_id = aws_security_group.allow-web.id
   tags              = var.default_tags
 }
 
@@ -122,6 +122,6 @@ resource "aws_security_group_rule" "ingress_http" {
   to_port           = 80
   protocol          = "tcp"
   cidr_blocks       = [var.cidr.anycast]
-  security_group_id = aws_security_group.alllow-web.id
+  security_group_id = aws_security_group.allow-web.id
   tags              = var.default_tags
 }
