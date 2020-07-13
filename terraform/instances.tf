@@ -40,7 +40,8 @@ resource "aws_launch_template" "bastion" {
   network_interfaces {
     subnet_id = aws_subnet.public-subnet.id
   }
-  
+
+  tags  = var.default-tags  
 }
 
 resource "aws_launch_template" "compute" {
@@ -64,6 +65,8 @@ resource "aws_launch_template" "compute" {
     subnet_id = aws_subnet.private-subnet.id
   }
   
+  tags  = var.default-tags
+  
 }
 
 ## Instance(s)
@@ -77,7 +80,6 @@ resource "aws_autoscaling_group" "bastion" {
   desired_capacity     = 1
   min_size             = 1
   max_size             = 1
-  tags                 = var.default-tags
   placement_group      = aws_placement_group.production.id
 }
 
