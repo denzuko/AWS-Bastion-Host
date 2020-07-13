@@ -2,7 +2,7 @@
 
 resource "aws_key_pair" "mykeypair" {
   key_name   = "mykeypair"
-  public_key = file(var.key_path)
+  public_key = var.public_key
   tags = var.default-tags
 }
 
